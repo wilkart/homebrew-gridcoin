@@ -4,6 +4,7 @@ class GridcoinCli < Formula
   url "https://github.com/gridcoin/Gridcoin-Research/archive/4.0.6.0.tar.gz"
   sha256 "b2908f907227cae735a42dd5aadad26d6999077e6997ee42d9cb0e50738bec43"
 
+
   stable do
     patch <<-EOS
       diff --git a/configure.ac b/configure.ac
@@ -14,7 +15,9 @@ class GridcoinCli < Formula
        if test x$use_boost = xyes; then
 
       -BOOST_LIBS="$BOOST_LDFLAGS $BOOST_SYSTEM_LIB $BOOST_FILESYSTEM_LIB $BOOST_ZLIB_LIB $BOOST_IOSTREAMS_LIB $BOOST_PROGRAM_OPTIONS_LIB $BOOST_THREAD_LIB $BOOST_CHRONO_LIB $BOOST_ZLIB_LIB"
-      +BOOST_LIBS="$BOOST_LDFLAGS $BOOST_SYSTEM_LIB $BOOST_FILESYSTEM_LIB $BOOST_ZLIB_LIB $BOOST_IOSTREAMS_LIB $BOOST_PROGRAM_OPTIONS_LIB $BOOST_THREAD_LIB $BOOST_CHRONO_LIB $BOOST_ZLIB_LIB -lboost_system-mt"
+      +BOOST_LIBS="$BOOST_LDFLAGS $BOOST_SYSTEM_LIB $BOOST_FILESYSTEM_LIB $BOOST_ZLIB_LIB $BOOST_IOSTREAMS_LIB $BOOST_PROGRAM_OPTIONS_LIB $BOOST_THREAD_LIB $BOOST_CHRONO_LIB $BOOST_ZLIB_LIB -lboost_system-m
+t"
+
 
       @@ -1171,5 +1165,7 @@ echo "  CFLAGS        = $CFLAGS"
        echo "  CPPFLAGS      = $CPPFLAGS"
@@ -27,6 +30,7 @@ class GridcoinCli < Formula
     EOS
   end
 
+
   depends_on "boost"
   depends_on "berkeley-db"
   depends_on "leveldb"
@@ -37,6 +41,7 @@ class GridcoinCli < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+
 
   def install
     args = %W[
@@ -55,6 +60,7 @@ class GridcoinCli < Formula
     system "make", "-C", "src"
     bin.install "src/gridcoinresearchd"
   end
+
 
   test do
     # `test do` will create, run in and delete a temporary directory.
