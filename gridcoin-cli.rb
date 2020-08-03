@@ -4,7 +4,6 @@ class GridcoinCli < Formula
   url "https://github.com/gridcoin/Gridcoin-Research/archive/4.0.6.0.tar.gz"
   sha256 "b2908f907227cae735a42dd5aadad26d6999077e6997ee42d9cb0e50738bec43"
 
-
   stable do
     patch <<-EOS
       diff --git a/configure.ac b/configure.ac
@@ -13,12 +12,11 @@ class GridcoinCli < Formula
       +++ b/configure.ac
       @@ -829,5 +823,5 @@
        if test x$use_boost = xyes; then
-
+       
       -BOOST_LIBS="$BOOST_LDFLAGS $BOOST_SYSTEM_LIB $BOOST_FILESYSTEM_LIB $BOOST_ZLIB_LIB $BOOST_IOSTREAMS_LIB $BOOST_PROGRAM_OPTIONS_LIB $BOOST_THREAD_LIB $BOOST_CHRONO_LIB $BOOST_ZLIB_LIB"
-      +BOOST_LIBS="$BOOST_LDFLAGS $BOOST_SYSTEM_LIB $BOOST_FILESYSTEM_LIB $BOOST_ZLIB_LIB $BOOST_IOSTREAMS_LIB $BOOST_PROGRAM_OPTIONS_LIB $BOOST_THREAD_LIB $BOOST_CHRONO_LIB $BOOST_ZLIB_LIB -lboost_system-m
-t"
-
-
+      +BOOST_LIBS="$BOOST_LDFLAGS $BOOST_SYSTEM_LIB $BOOST_FILESYSTEM_LIB $BOOST_ZLIB_LIB $BOOST_IOSTREAMS_LIB $BOOST_PROGRAM_OPTIONS_LIB $BOOST_THREAD_LIB $BOOST_CHRONO_LIB $BOOST_ZLIB_LIB -lboost_system-mt"
+       
+       
       @@ -1171,5 +1165,7 @@ echo "  CFLAGS        = $CFLAGS"
        echo "  CPPFLAGS      = $CPPFLAGS"
        echo "  CXX           = $CXX"
