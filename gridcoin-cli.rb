@@ -1,4 +1,4 @@
-class GridcoinCLI < Formula
+class GridcoinCli < Formula
   desc "Gridcoin Research CLI for macOS"
   homepage "https://gridcoin.us/"
   url "https://github.com/gridcoin/Gridcoin-Research/archive/4.0.6.0.tar.gz"
