@@ -48,7 +48,7 @@ This software is recognised as an OSX/CoinMiner by antivirus. Disable any real t
     /usr/local/bin/gridcoinresearchd getbalance
 
 #### Display network related information.
-    /usr/local/bin/gridcoinresearchd getbalance
+    /usr/local/bin/gridcoinresearchd getnetworkinfo
 
 #### Display mining-related information.
     /usr/local/bin/gridcoinresearchd getmininginfo
