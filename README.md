@@ -37,28 +37,28 @@ This software is recognised as an OSX/CoinMiner by antivirus. Disable any real t
 
 
 ## Running
-    /usr/local/Cellar/gridcoin-cli/4.0.6.0/bin/gridcoinresearchd
+    /usr/local/bin/gridcoinresearchd
 
 ## Usage
 
 ### List balances by receiving address.
-    /usr/local/Cellar/gridcoin-cli/4.0.6.0/bin/gridcoinresearchd listreceivedbyaddress 1 true true
+    /usr/local/bin/gridcoinresearchd listreceivedbyaddress 1 true true
 
 ### Total available balance.
-     /usr/local/Cellar/gridcoin-cli/4.0.6.0/bin/gridcoinresearchd getbalance
+    /usr/local/bin/gridcoinresearchd getbalance
 
 ### Display network related information.
-    /usr/local/Cellar/gridcoin-cli/4.0.6.0/bin/gridcoinresearchd getbalance
+    /usr/local/bin/gridcoinresearchd getbalance
 
 ### Display mining-related information.
-    /usr/local/Cellar/gridcoin-cli/4.0.6.0/bin/gridcoinresearchd getmininginfo
+    /usr/local/bin/gridcoinresearchd getmininginfo
 
 ### Display status of your beacon.
-    /usr/local/Cellar/gridcoin-cli/4.0.6.0/bin/gridcoinresearchd beaconstatus
+    /usr/local/bin/gridcoinresearchd beaconstatus
 
 
 ## Help
-    /usr/local/Cellar/gridcoin-cli/4.0.6.0/bin/gridcoinresearchd help
+    /usr/local/bin/gridcoinresearchd help
 
 
 ## Unistallation
