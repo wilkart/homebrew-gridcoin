@@ -1,7 +1,9 @@
 # Gridcoin Research CLI for macOS
 
 ## Disclaimer
-This software is recognised as an OSX/CoinMiner by antivirus. Disable any real time system protection for installation time. Exclude /usr/local/Cellar/gridcoin-cli path from future antivirus scanning.
+This software is recognised as an OSX/CoinMiner by antivirus. Disable any real time system protection for installation time. Exclude the following path from future antivirus scanning.
+    
+    /usr/local/Cellar/gridcoin-cli
 
 
 ## Installation
