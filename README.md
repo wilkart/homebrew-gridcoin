@@ -41,19 +41,19 @@ This software is recognised as an OSX/CoinMiner by antivirus. Disable any real t
 
 ## Usage
 
-### List balances by receiving address.
+#### List balances by receiving address.
     /usr/local/bin/gridcoinresearchd listreceivedbyaddress 1 true true
 
-### Total available balance.
+#### Total available balance.
     /usr/local/bin/gridcoinresearchd getbalance
 
-### Display network related information.
+#### Display network related information.
     /usr/local/bin/gridcoinresearchd getbalance
 
-### Display mining-related information.
+#### Display mining-related information.
     /usr/local/bin/gridcoinresearchd getmininginfo
 
-### Display status of your beacon.
+#### Display status of your beacon.
     /usr/local/bin/gridcoinresearchd beaconstatus
 
 
