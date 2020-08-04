@@ -38,6 +38,23 @@ Disable any real time system protection for installation time.
 ## Running
     /usr/local/Cellar/gridcoin-cli/4.0.6.0/bin/gridcoinresearchd
 
+## Usage
+
+### List balances by receiving address.
+    /usr/local/Cellar/gridcoin-cli/4.0.6.0/bin/gridcoinresearchd listreceivedbyaddress 1 true true
+
+### Total available balance.
+     /usr/local/Cellar/gridcoin-cli/4.0.6.0/bin/gridcoinresearchd getbalance
+
+### Display network related information.
+    /usr/local/Cellar/gridcoin-cli/4.0.6.0/bin/gridcoinresearchd getbalance
+
+### Display mining-related information.
+    /usr/local/Cellar/gridcoin-cli/4.0.6.0/bin/gridcoinresearchd getmininginfo
+
+### Display status of your beacon.
+    /usr/local/Cellar/gridcoin-cli/4.0.6.0/bin/gridcoinresearchd beaconstatus
+
 
 ## Help
     /usr/local/Cellar/gridcoin-cli/4.0.6.0/bin/gridcoinresearchd help
