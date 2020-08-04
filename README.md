@@ -1,8 +1,9 @@
 # Gridcoin Research CLI for macOS
 
 ## Disclaimer
-This software is recognised as an OSX/CoinMiner by antivirus. 
-Disable any real time system protection for installation time.
+This software is recognised as an OSX/CoinMiner by antivirus. Disable any real time system protection for installation time. Exclude the following path from future antivirus scanning.
+    
+    /usr/local/Cellar/gridcoin-cli
 
 
 ## Installation
@@ -12,7 +13,7 @@ Disable any real time system protection for installation time.
 
 
 ## Configuration
-~/Library/ApplicationSupport/GridcoinResearch/
+~/Library/ApplicationSupport/GridcoinResearch/gridcoinresearch.conf
 
     daemon=1
     listen=1
@@ -29,15 +30,36 @@ Disable any real time system protection for installation time.
     server=1
     rpcuser=<YOUR USER>
     rpcpassword=<YOUR PASSWORD>
-    rpcssl=1
+    rpcssl=0
+    
+    email=<YOUR BOINC EMAIL>
+    boincdatadir=/Library/Application Support/BOINC Data/
 
 
 ## Running
-    /usr/local/Cellar/gridcoin-cli/4.0.6.0/bin/gridcoinresearchd
+    /usr/local/bin/gridcoinresearchd -daemon
+
+## Usage
+
+#### List balances by receiving address.
+    /usr/local/bin/gridcoinresearchd listreceivedbyaddress 1 true true
+
+#### Total available balance.
+    /usr/local/bin/gridcoinresearchd getbalance
+
+#### Display network related information.
+    /usr/local/bin/gridcoinresearchd getnetworkinfo
+
+#### Display mining-related information.
+    /usr/local/bin/gridcoinresearchd getmininginfo
+
+#### Display status of your beacon.
+    /usr/local/bin/gridcoinresearchd beaconstatus
 
 
 ## Help
-    /usr/local/Cellar/gridcoin-cli/4.0.6.0/bin/gridcoinresearchd help
+    /usr/local/bin/gridcoinresearchd --help
+    /usr/local/bin/gridcoinresearchd help
 
 
 ## Unistallation
