@@ -13,7 +13,7 @@ This software is recognised as an OSX/CoinMiner by antivirus. Disable any real t
 
 
 ## Configuration
-~/Library/ApplicationSupport/GridcoinResearch/
+~/Library/ApplicationSupport/GridcoinResearch/gridcoinresearch.conf
 
     daemon=1
     listen=1
