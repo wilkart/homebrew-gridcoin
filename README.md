@@ -30,7 +30,7 @@ This software is recognised as an OSX/CoinMiner by antivirus. Disable any real t
     server=1
     rpcuser=<YOUR USER>
     rpcpassword=<YOUR PASSWORD>
-    rpcssl=1
+    rpcssl=0
     
     email=<YOUR BOINC EMAIL>
     boincdatadir=/Library/Application Support/BOINC Data/
