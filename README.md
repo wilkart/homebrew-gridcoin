@@ -37,7 +37,7 @@ This software is recognised as an OSX/CoinMiner by antivirus. Disable any real t
 
 
 ## Running
-    /usr/local/bin/gridcoinresearchd
+    /usr/local/bin/gridcoinresearchd -daemon
 
 ## Usage
 
@@ -58,6 +58,7 @@ This software is recognised as an OSX/CoinMiner by antivirus. Disable any real t
 
 
 ## Help
+    /usr/local/bin/gridcoinresearchd --help
     /usr/local/bin/gridcoinresearchd help
 
 
