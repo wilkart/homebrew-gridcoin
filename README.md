@@ -30,6 +30,9 @@ Disable any real time system protection for installation time.
     rpcuser=<YOUR USER>
     rpcpassword=<YOUR PASSWORD>
     rpcssl=1
+    
+    email=<YOUR BOINC EMAIL>
+    boincdatadir=/Library/Application Support/BOINC Data/
 
 
 ## Running
