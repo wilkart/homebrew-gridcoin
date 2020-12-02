@@ -1,4 +1,4 @@
-class GridcoinCli < Formula
+class GridcoinCliDb4 < Formula
   desc "Gridcoin Research CLI for macOS"
   homepage "https://gridcoin.us/"
   url "https://github.com/gridcoin-community/Gridcoin-Research/archive/5.1.0.0.tar.gz"
@@ -30,7 +30,7 @@ class GridcoinCli < Formula
 
 
   depends_on "boost"
-  depends_on "berkeley-db"
+  depends_on "berkeley-db@4"
   depends_on "leveldb"
   depends_on "openssl"
   depends_on "miniupnpc"
@@ -54,7 +54,7 @@ class GridcoinCli < Formula
     ]
 
     system "./autogen.sh"
-    system "unset OBJCXX ; ./configure --with-incompatible-bdb --without-gui --disable-tests --disable-bench --disable-dependency-tracking --disable-asm"
+    system "unset OBJCXX ; ./configure --without-gui --disable-tests --disable-bench --disable-dependency-tracking --disable-asm"
     system "make"
     system "strip", "src/gridcoinresearchd"
     bin.install "src/gridcoinresearchd"
