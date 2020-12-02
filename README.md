@@ -19,13 +19,7 @@ This software is recognised as an OSX/CoinMiner by antivirus. Disable any real t
     listen=1
     port=32749
 
-    addnode=fi.gridcoin.pl
-    addnode=is.gridcoin.pl
-    addnode=nl.gridcoin.pl
-    addnode=fr.gridcoin.pl
-    addnode=pl.gridcoin.pl
-    addnode=by.gridcoin.pl
-    addnode=ch.gridcoin.pl
+    addnode=seed.gridcoin.pl
 
     server=1
     rpcuser=<YOUR USER>
