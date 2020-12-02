@@ -56,7 +56,6 @@ class GridcoinCli < Formula
     system "./autogen.sh"
     system "unset OBJCXX ; ./configure --with-incompatible-bdb --without-gui --disable-tests --disable-bench --disable-dependency-tracking --disable-asm"
     system "make"
-    system "strip", "src/gridcoinresearchd"
     bin.install "src/gridcoinresearchd"
   end
 
