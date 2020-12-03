@@ -3,10 +3,17 @@
 ## Disclaimer
 This software is recognised as an OSX/CoinMiner by antivirus. Disable any real time system protection for installation time. Exclude the following path from future antivirus scanning.
     
+    /usr/local/Cellar/gridcoin-cli
     /usr/local/Cellar/gridcoin-cli-db5
     /usr/local/Cellar/gridcoin-cli-db4
 
-## Installation with BerkleyDB 5.x
+
+## Installation with latest BerkleyDB
+
+    brew tap wilkart/gridcoin
+    brew install gridcoin-cli
+
+## Alternative installation compatible with BerkleyDB 5.x
 
     brew tap wilkart/gridcoin
     brew install gridcoin-cli-db5
