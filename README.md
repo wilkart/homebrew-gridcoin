@@ -2,7 +2,7 @@
 
 
 ## Version
-Gridcoin Core v5.1.0.0-unk
+Gridcoin Core v5.2.0.0-unk
 
 
 ## Disclaimer
