@@ -1,12 +1,8 @@
 # Gridcoin Research CLI for macOS
 
 
-## Version
-Gridcoin Core v5.2.0.0-unk
-
-
 ## Disclaimer
-This software is recognised as an OSX/CoinMiner by antivirus tools. 
+This software might be recognised as an OSX/CoinMiner by antivirus tools. 
 Disable a real time system protection for an installation time. 
 Exclude the following path from a real time antivirus scanning. 
     
