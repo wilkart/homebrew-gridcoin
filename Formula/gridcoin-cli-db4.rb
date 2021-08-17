@@ -1,10 +1,10 @@
 class GridcoinCliDb4 < Formula
   desc "Gridcoin Research CLI for macOS"
   homepage "https://gridcoin.us/"
-  url "https://github.com/gridcoin-community/Gridcoin-Research/archive/5.3.1.0.tar.gz"
-  sha256 "dc8aa87b2863a2d6e0aeebbd1df2719b1a5baa7feded1f5744b0fe1ad57abcad"
 
   stable do
+    url "https://github.com/gridcoin-community/Gridcoin-Research/archive/5.3.2.0.tar.gz"
+    sha256 "8cc7d668e3a189877ffcf535076bef928a553da0b393729f1f6576524ad2d813"
     patch <<-EOS
       diff --git a/configure.ac b/configure.ac
       index eb96af9c..8b692612 100644
