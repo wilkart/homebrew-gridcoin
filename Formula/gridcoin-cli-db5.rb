@@ -42,19 +42,31 @@ class GridcoinCliDb5 < Formula
 
 
   def install
-    args = %W[
-      BOOST_INCLUDE_PATH=#{Formula["boost"].include}
-      BOOST_LIB_PATH=#{Formula["boost"].lib}
+    boost = Formula["boost"].opt_prefix
+
+    configure_args = %W[
+      BOOST_ROOT=#{boost}
+      BOOST_INCLUDE_PATH=#{boost}/include
+      BOOST_LIB_PATH=#{boost}/lib
       OPENSSL_INCLUDE_PATH=#{Formula["openssl"].include}
       OPENSSL_LIB_PATH=#{Formula["openssl"].lib}
       BDB_INCLUDE_PATH=#{Formula["berkeley-db"].include}
       BDB_LIB_PATH=#{Formula["berkeley-db"].lib}
       MINIUPNPC_INCLUDE_PATH=#{Formula["miniupnpc"].include}
       MINIUPNPC_LIB_PATH=#{Formula["miniupnpc"].lib}
+      --with-boost=#{boost}
+      --with-incompatible-bdb
+      --without-gui
+      --disable-tests
+      --disable-bench
+      --disable-dependency-tracking
+      --disable-asm
     ]
 
+    system "cd src ; ../contrib/nomacro.pl"
     system "./autogen.sh"
-    system "unset OBJCXX ; ./configure --with-incompatible-bdb --without-gui --disable-tests --disable-bench --disable-dependency-tracking --disable-asm"
+    ENV.delete "OBJCXX"
+    system "./configure", *configure_args
     system "make"
     system "strip", "src/gridcoinresearchd"
     bin.install "src/gridcoinresearchd"
