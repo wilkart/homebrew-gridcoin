@@ -2,14 +2,17 @@
 
 
 ## Disclaimer
-This software might be recognised as an OSX/CoinMiner by antivirus tools. 
-Disable a real time system protection for an installation time. 
-Exclude the following path from a real time antivirus scanning. 
+This software might be recognised as an OSX/CoinMiner by antymalware and antivirus tools. 
+Considred to temporarly disable a real time system protection for an installation time. 
+Exclude the following path from a real time protection for running the wallet:
     
     /usr/local/Cellar/gridcoin-cli
     /usr/local/Cellar/gridcoin-cli-db5
     /usr/local/Cellar/gridcoin-cli-db4
 
+    /opt/homebrew/Cellar/gridcoin-cli
+    /opt/homebrew/Cellar/gridcoin-cli-db5
+    /opt/homebrew/Cellar/gridcoin-cli-db4
 
 ## Installation with latest BerkleyDB
 
@@ -40,35 +43,35 @@ Exclude the following path from a real time antivirus scanning.
     rpcuser=<YOUR USER>
     rpcpassword=<YOUR PASSWORD>
     rpcssl=0
-    
+
     email=<YOUR BOINC EMAIL>
     boincdatadir=/Library/Application Support/BOINC Data/
 
 
 ## Running
-    /usr/local/bin/gridcoinresearchd -daemon
+    gridcoinresearchd -daemon
 
 ## Usage
 
 #### List balances by receiving address.
-    /usr/local/bin/gridcoinresearchd listreceivedbyaddress 1 true true
+    gridcoinresearchd listreceivedbyaddress 1 true true
 
 #### Total available balance.
-    /usr/local/bin/gridcoinresearchd getbalance
+    gridcoinresearchd getbalance
 
 #### Display network related information.
-    /usr/local/bin/gridcoinresearchd getnetworkinfo
+    gridcoinresearchd getnetworkinfo
 
 #### Display mining-related information.
-    /usr/local/bin/gridcoinresearchd getmininginfo
+    gridcoinresearchd getmininginfo
 
 #### Display status of your beacon.
-    /usr/local/bin/gridcoinresearchd beaconstatus
+    gridcoinresearchd beaconstatus
 
 
 ## Help
-    /usr/local/bin/gridcoinresearchd --help
-    /usr/local/bin/gridcoinresearchd help
+    gridcoinresearchd --help
+    gridcoinresearchd help
 
 
 ## Unistallation

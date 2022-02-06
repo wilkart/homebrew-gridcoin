@@ -32,7 +32,7 @@ class GridcoinCli < Formula
   depends_on "boost"
   depends_on "berkeley-db"
   depends_on "leveldb"
-  depends_on "openssl"
+  depends_on "openssl@1.1"
   depends_on "miniupnpc"
   depends_on "libzip"
   depends_on "pkg-config" => :build
@@ -48,8 +48,8 @@ class GridcoinCli < Formula
       BOOST_ROOT=#{boost}
       BOOST_INCLUDE_PATH=#{boost}/include
       BOOST_LIB_PATH=#{boost}/lib
-      OPENSSL_INCLUDE_PATH=#{Formula["openssl"].include}
-      OPENSSL_LIB_PATH=#{Formula["openssl"].lib}
+      OPENSSL_INCLUDE_PATH=#{Formula["openssl@1.1"].include}
+      OPENSSL_LIB_PATH=#{Formula["openssl@1.1"].lib}
       BDB_INCLUDE_PATH=#{Formula["berkeley-db"].include}
       BDB_LIB_PATH=#{Formula["berkeley-db"].lib}
       MINIUPNPC_INCLUDE_PATH=#{Formula["miniupnpc"].include}
