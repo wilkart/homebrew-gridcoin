@@ -2,9 +2,8 @@
 
 
 ## Disclaimer
-This software might be recognised as an OSX/CoinMiner by antymalware and antivirus tools. 
-Considred to temporarly disable a real time system protection for an installation time. 
-Exclude the following path from a real time protection for running the wallet:
+This software might be recognised as an OSX/CoinMiner by antimalware and antivirus tools. 
+Consider to temporarily disable it for an installation time. Exclude or ignore the following path from a real time protection to run the wallet:
     
     /usr/local/Cellar/gridcoin-cli
     /usr/local/Cellar/gridcoin-cli-db5
