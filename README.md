@@ -47,7 +47,7 @@ Consider to temporarily disable it for an installation time. Exclude or ignore t
     gridcoinresearchd getnetworkinfo
 
 #### Display mining-related information.
-    gridcoinresearchd getmininginfo
+    gridcoinresearchd getstakinginfo
 
 #### Display status of your beacon.
     gridcoinresearchd beaconstatus
