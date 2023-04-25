@@ -31,7 +31,7 @@ class GridcoinCli < Formula
 
   depends_on "boost"
   depends_on "leveldb"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "miniupnpc"
   depends_on "libzip"
   depends_on "pkg-config" => :build
@@ -47,8 +47,8 @@ class GridcoinCli < Formula
       BOOST_ROOT=#{boost}
       BOOST_INCLUDE_PATH=#{boost}/include
       BOOST_LIB_PATH=#{boost}/lib
-      OPENSSL_INCLUDE_PATH=#{Formula["openssl@1.1"].include}
-      OPENSSL_LIB_PATH=#{Formula["openssl@1.1"].lib}
+      OPENSSL_INCLUDE_PATH=#{Formula["openssl@3"].include}
+      OPENSSL_LIB_PATH=#{Formula["openssl@3"].lib}
       MINIUPNPC_INCLUDE_PATH=#{Formula["miniupnpc"].include}
       MINIUPNPC_LIB_PATH=#{Formula["miniupnpc"].lib}
       --with-boost=#{boost}
