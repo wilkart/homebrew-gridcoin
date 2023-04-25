@@ -3,8 +3,8 @@ class GridcoinCli < Formula
   homepage "https://gridcoin.us/"
 
   stable do
-    url "https://github.com/gridcoin-community/Gridcoin-Research/archive/5.4.1.0.tar.gz"
-    sha256 "d4a817fad86bb60e06cfcb672419b827e8452ae1e9494af11650de230d9ca13d"
+    url "https://github.com/gridcoin-community/Gridcoin-Research/archive/5.4.5.0.tar.gz"
+    sha256 "e25461523e28dd812c8dcb094c0661c0868b07f6478fb578bcf15f811b3f45ee"
     patch <<-EOS
       diff --git a/configure.ac b/configure.ac
       index eb96af9c..8b692612 100644
@@ -30,9 +30,8 @@ class GridcoinCli < Formula
 
 
   depends_on "boost"
-  depends_on "berkeley-db"
   depends_on "leveldb"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "miniupnpc"
   depends_on "libzip"
   depends_on "pkg-config" => :build
@@ -48,14 +47,11 @@ class GridcoinCli < Formula
       BOOST_ROOT=#{boost}
       BOOST_INCLUDE_PATH=#{boost}/include
       BOOST_LIB_PATH=#{boost}/lib
-      OPENSSL_INCLUDE_PATH=#{Formula["openssl@1.1"].include}
-      OPENSSL_LIB_PATH=#{Formula["openssl@1.1"].lib}
-      BDB_INCLUDE_PATH=#{Formula["berkeley-db"].include}
-      BDB_LIB_PATH=#{Formula["berkeley-db"].lib}
+      OPENSSL_INCLUDE_PATH=#{Formula["openssl@3"].include}
+      OPENSSL_LIB_PATH=#{Formula["openssl@3"].lib}
       MINIUPNPC_INCLUDE_PATH=#{Formula["miniupnpc"].include}
       MINIUPNPC_LIB_PATH=#{Formula["miniupnpc"].lib}
       --with-boost=#{boost}
-      --with-incompatible-bdb
       --without-gui
       --disable-tests
       --disable-bench
