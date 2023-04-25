@@ -6,28 +6,13 @@ This software might be recognised as an OSX/CoinMiner by antimalware and antivir
 Consider to temporarily disable it for an installation time. Exclude or ignore the following path from a real time protection to run the wallet:
     
     /usr/local/Cellar/gridcoin-cli
-    /usr/local/Cellar/gridcoin-cli-db5
-    /usr/local/Cellar/gridcoin-cli-db4
 
     /opt/homebrew/Cellar/gridcoin-cli
-    /opt/homebrew/Cellar/gridcoin-cli-db5
-    /opt/homebrew/Cellar/gridcoin-cli-db4
 
-## Installation with latest BerkleyDB
+## Installation
 
     brew tap wilkart/gridcoin
     brew install gridcoin-cli
-
-## Alternative installation compatible with BerkleyDB 5.x
-
-    brew tap wilkart/gridcoin
-    brew install gridcoin-cli-db5
-
-## Alternative installation compatible with BerkleyDB 4.x
-
-    brew tap wilkart/gridcoin
-    brew install gridcoin-cli-db4
-
 
 ## Configuration
 ~/Library/ApplicationSupport/GridcoinResearch/gridcoinresearch.conf
