@@ -2,12 +2,15 @@
 
 
 ## Disclaimer
-This software might be recognised as an OSX/CoinMiner by antimalware and antivirus tools. 
-Consider to temporarily disable it for an installation time. Exclude or ignore the following path from a real time protection to run the wallet:
+This software is recognised as an OSX/CoinMiner by antimalware and antivirus tools. 
+You have to temporarily disable that tools for an installation or upgrade. 
+Also exclude or ignore the following path from a real time protection to run the wallet:
     
-    /usr/local/Cellar/gridcoin-cli
+    /opt/homebrew/Cellar/gridcoin-cli (Apple Silicon)
 
-    /opt/homebrew/Cellar/gridcoin-cli
+    /usr/local/Cellar/gridcoin-cli (Apple Intel)
+
+Apple Lockdown Mode helps protect devices against extremely rare and highly sophisticated cyber attacks. It prevents Gridcoin Research CLI for macOS to work correctly ("staking": false, "mining-error": "Offline",). Disable Lockdown Mode, reboot your system, proceed with installation or upgrade and enable Lockdown Mode on again.
 
 ## Installation
 
