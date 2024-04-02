@@ -2,30 +2,20 @@
 
 
 ## Disclaimer
-This software might be recognised as an OSX/CoinMiner by antivirus tools. 
-Disable a real time system protection for an installation time. 
-Exclude the following path from a real time antivirus scanning. 
+This software is recognised as an OSX/CoinMiner by antimalware and antivirus tools. 
+You have to temporarily disable that tools for an installation or upgrade. 
+Also exclude or ignore the following path from a real time protection to run the wallet:
     
-    /usr/local/Cellar/gridcoin-cli
-    /usr/local/Cellar/gridcoin-cli-db5
-    /usr/local/Cellar/gridcoin-cli-db4
+    /opt/homebrew/Cellar/gridcoin-cli (Apple Silicon)
 
+    /usr/local/Cellar/gridcoin-cli (Apple Intel)
 
-## Installation with latest BerkleyDB
+Apple Lockdown Mode helps protect devices against extremely rare and highly sophisticated cyber attacks. It prevents Gridcoin Research CLI for macOS to work correctly ("staking": false, "mining-error": "Offline",). Disable Lockdown Mode, reboot your system, proceed with installation or upgrade and enable Lockdown Mode on again.
+
+## Installation
 
     brew tap wilkart/gridcoin
     brew install gridcoin-cli
-
-## Alternative installation compatible with BerkleyDB 5.x
-
-    brew tap wilkart/gridcoin
-    brew install gridcoin-cli-db5
-
-## Alternative installation compatible with BerkleyDB 4.x
-
-    brew tap wilkart/gridcoin
-    brew install gridcoin-cli-db4
-
 
 ## Configuration
 ~/Library/ApplicationSupport/GridcoinResearch/gridcoinresearch.conf
@@ -40,35 +30,35 @@ Exclude the following path from a real time antivirus scanning.
     rpcuser=<YOUR USER>
     rpcpassword=<YOUR PASSWORD>
     rpcssl=0
-    
+
     email=<YOUR BOINC EMAIL>
     boincdatadir=/Library/Application Support/BOINC Data/
 
 
 ## Running
-    /usr/local/bin/gridcoinresearchd -daemon
+    gridcoinresearchd -daemon
 
 ## Usage
 
 #### List balances by receiving address.
-    /usr/local/bin/gridcoinresearchd listreceivedbyaddress 1 true true
+    gridcoinresearchd listreceivedbyaddress 1 true true
 
 #### Total available balance.
-    /usr/local/bin/gridcoinresearchd getbalance
+    gridcoinresearchd getbalance
 
 #### Display network related information.
-    /usr/local/bin/gridcoinresearchd getnetworkinfo
+    gridcoinresearchd getnetworkinfo
 
 #### Display mining-related information.
-    /usr/local/bin/gridcoinresearchd getmininginfo
+    gridcoinresearchd getstakinginfo
 
 #### Display status of your beacon.
-    /usr/local/bin/gridcoinresearchd beaconstatus
+    gridcoinresearchd beaconstatus
 
 
 ## Help
-    /usr/local/bin/gridcoinresearchd --help
-    /usr/local/bin/gridcoinresearchd help
+    gridcoinresearchd --help
+    gridcoinresearchd help
 
 
 ## Unistallation

@@ -3,8 +3,8 @@ class GridcoinCli < Formula
   homepage "https://gridcoin.us/"
 
   stable do
-    url "https://github.com/gridcoin-community/Gridcoin-Research/archive/5.3.2.0.tar.gz"
-    sha256 "8cc7d668e3a189877ffcf535076bef928a553da0b393729f1f6576524ad2d813"
+    url "https://github.com/gridcoin-community/Gridcoin-Research/archive/5.4.5.0.tar.gz"
+    sha256 "e25461523e28dd812c8dcb094c0661c0868b07f6478fb578bcf15f811b3f45ee"
     patch <<-EOS
       diff --git a/configure.ac b/configure.ac
       index eb96af9c..8b692612 100644
@@ -13,8 +13,8 @@ class GridcoinCli < Formula
       @@ -829,5 +823,5 @@
        if test x$use_boost = xyes; then
        
-      -BOOST_LIBS="$BOOST_LDFLAGS $BOOST_SYSTEM_LIB $BOOST_FILESYSTEM_LIB $BOOST_ZLIB_LIB $BOOST_IOSTREAMS_LIB $BOOST_PROGRAM_OPTIONS_LIB $BOOST_THREAD_LIB $BOOST_CHRONO_LIB $BOOST_ZLIB_LIB"
-      +BOOST_LIBS="$BOOST_LDFLAGS $BOOST_SYSTEM_LIB $BOOST_FILESYSTEM_LIB $BOOST_ZLIB_LIB $BOOST_IOSTREAMS_LIB $BOOST_PROGRAM_OPTIONS_LIB $BOOST_THREAD_LIB $BOOST_CHRONO_LIB $BOOST_ZLIB_LIB -lboost_system-mt"
+      -BOOST_LIBS="$BOOST_LDFLAGS $BOOST_SYSTEM_LIB $BOOST_FILESYSTEM_LIB $BOOST_IOSTREAMS_LIB $BOOST_THREAD_LIB $BOOST_ZLIB_LIB"
+      +BOOST_LIBS="$BOOST_LDFLAGS $BOOST_SYSTEM_LIB $BOOST_FILESYSTEM_LIB $BOOST_IOSTREAMS_LIB $BOOST_THREAD_LIB $BOOST_ZLIB_LIB -lboost_system-mt"
        
        
       @@ -1171,5 +1165,7 @@ echo "  CFLAGS        = $CFLAGS"
@@ -30,9 +30,8 @@ class GridcoinCli < Formula
 
 
   depends_on "boost"
-  depends_on "berkeley-db"
   depends_on "leveldb"
-  depends_on "openssl"
+  depends_on "openssl@3"
   depends_on "miniupnpc"
   depends_on "libzip"
   depends_on "pkg-config" => :build
@@ -48,14 +47,11 @@ class GridcoinCli < Formula
       BOOST_ROOT=#{boost}
       BOOST_INCLUDE_PATH=#{boost}/include
       BOOST_LIB_PATH=#{boost}/lib
-      OPENSSL_INCLUDE_PATH=#{Formula["openssl"].include}
-      OPENSSL_LIB_PATH=#{Formula["openssl"].lib}
-      BDB_INCLUDE_PATH=#{Formula["berkeley-db"].include}
-      BDB_LIB_PATH=#{Formula["berkeley-db"].lib}
+      OPENSSL_INCLUDE_PATH=#{Formula["openssl@3"].include}
+      OPENSSL_LIB_PATH=#{Formula["openssl@3"].lib}
       MINIUPNPC_INCLUDE_PATH=#{Formula["miniupnpc"].include}
       MINIUPNPC_LIB_PATH=#{Formula["miniupnpc"].lib}
       --with-boost=#{boost}
-      --with-incompatible-bdb
       --without-gui
       --disable-tests
       --disable-bench
