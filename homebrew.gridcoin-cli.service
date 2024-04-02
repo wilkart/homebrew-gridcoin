@@ -1,0 +1,10 @@
+[Unit]
+Description=Homebrew generated unit for gridcoin-cli
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Type=simple
+ExecStart=/opt/homebrew/opt/gridcoin-cli/bin/gridcoinresearchd -daemon
+Restart=always
