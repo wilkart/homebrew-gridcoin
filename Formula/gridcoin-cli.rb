@@ -53,11 +53,11 @@ class GridcoinCli < Formula
       MINIUPNPC_LIB_PATH=#{Formula["miniupnpc"].lib}
       --with-boost=#{boost}
       --without-gui
-      --enable-reduce-exports
       --disable-tests
       --disable-bench
       --disable-dependency-tracking
       --disable-asm
+      --enable-reduce-exports
     ]
 
     system "cd src ; ../contrib/nomacro.pl"
@@ -67,8 +67,24 @@ class GridcoinCli < Formula
     system "make"
     system "strip", "src/gridcoinresearchd"
     bin.install "src/gridcoinresearchd"
+    man1.install ["doc/gridcoinresearchd.1"]
   end
 
+  def caveats
+    <<~EOS
+      Gridcoin is a peer-to-peer cryptocurrency that uses distributed computing (BOINC).
+      See also: 
+      - man 1 gridcoinresearchd
+      - gridcoinresearchd --help
+      - gridcoinresearchd help
+    EOS
+  end
+
+  service do
+    run [opt_bin/"gridcoinresearchd", "--daemon=0", "--synctime=1", "--disableupdatecheck=1"]
+    keep_alive true
+    require_root false
+  end
 
   test do
     # `test do` will create, run in and delete a temporary directory.
