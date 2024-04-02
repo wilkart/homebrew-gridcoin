@@ -3,8 +3,8 @@ class GridcoinCli < Formula
   homepage "https://gridcoin.us/"
 
   stable do
-    url "https://github.com/gridcoin-community/Gridcoin-Research/archive/5.4.5.0.tar.gz"
-    sha256 "e25461523e28dd812c8dcb094c0661c0868b07f6478fb578bcf15f811b3f45ee"
+    url "https://github.com/gridcoin-community/Gridcoin-Research/archive/refs/tags/5.4.7.0.tar.gz"
+    sha256 "bd2341513cd533257358080600d6a8ab20128c14a19d3881117dfa65a6cd8f2d"
     patch <<-EOS
       diff --git a/configure.ac b/configure.ac
       index eb96af9c..8b692612 100644
@@ -53,6 +53,7 @@ class GridcoinCli < Formula
       MINIUPNPC_LIB_PATH=#{Formula["miniupnpc"].lib}
       --with-boost=#{boost}
       --without-gui
+      --enable-reduce-exports
       --disable-tests
       --disable-bench
       --disable-dependency-tracking
