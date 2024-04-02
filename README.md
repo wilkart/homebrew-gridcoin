@@ -20,7 +20,6 @@ Apple Lockdown Mode helps protect devices against extremely rare and highly soph
 ## Configuration
 ~/Library/ApplicationSupport/GridcoinResearch/gridcoinresearch.conf
 
-    daemon=1
     listen=1
     port=32749
 
@@ -36,9 +35,13 @@ Apple Lockdown Mode helps protect devices against extremely rare and highly soph
 
 
 ## Running
-    gridcoinresearchd -daemon
+    brew services start wilkart/gridcoin/gridcoin-cli
 
 ## Usage
+#### Read manual and help pages.
+    man 1 gridcoinresearchd
+    gridcoinresearchd --help
+    gridcoinresearchd help
 
 #### List balances by receiving address.
     gridcoinresearchd listreceivedbyaddress 1 true true
