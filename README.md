@@ -1,11 +1,10 @@
 # Gridcoin Research CLI for macOS
 
-
 ## Disclaimer
-This software is recognised as an OSX/CoinMiner by antimalware and antivirus tools. 
-You have to temporarily disable that tools for an installation or upgrade. 
-Also exclude or ignore the following path from a real time protection to run the wallet:
-    
+This software is identified as OSX/CoinMiner by antimalware and antivirus software. 
+To proceed with installation or upgrade, you will need to temporarily disable these security tools. 
+Additionally, please ensure to exclude or ignore the following path from real-time protection in order to run the wallet.
+
     /opt/homebrew/Cellar/gridcoin-cli (Apple Silicon)
 
     /usr/local/Cellar/gridcoin-cli (Apple Intel)
