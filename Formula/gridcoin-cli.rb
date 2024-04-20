@@ -3,8 +3,8 @@ class GridcoinCli < Formula
   homepage "https://gridcoin.us/"
 
   stable do
-    url "https://github.com/gridcoin-community/Gridcoin-Research/archive/refs/tags/5.4.7.0.tar.gz"
-    sha256 "bd2341513cd533257358080600d6a8ab20128c14a19d3881117dfa65a6cd8f2d"
+    url "https://github.com/gridcoin-community/Gridcoin-Research/archive/refs/tags/5.4.8.0.tar.gz"
+    sha256 "6d1f263bc210775632e156fd79b518e0fae90bae829d299f87e95bc84f9688d1"
     patch <<-EOS
       diff --git a/configure.ac b/configure.ac
       index eb96af9c..8b692612 100644
@@ -15,7 +15,6 @@ class GridcoinCli < Formula
        
       -BOOST_LIBS="$BOOST_LDFLAGS $BOOST_SYSTEM_LIB $BOOST_FILESYSTEM_LIB $BOOST_IOSTREAMS_LIB $BOOST_THREAD_LIB $BOOST_ZLIB_LIB"
       +BOOST_LIBS="$BOOST_LDFLAGS $BOOST_SYSTEM_LIB $BOOST_FILESYSTEM_LIB $BOOST_IOSTREAMS_LIB $BOOST_THREAD_LIB $BOOST_ZLIB_LIB -lboost_system-mt"
-       
        
       @@ -1171,5 +1165,7 @@ echo "  CFLAGS        = $CFLAGS"
        echo "  CPPFLAGS      = $CPPFLAGS"
@@ -28,6 +27,10 @@ class GridcoinCli < Formula
     EOS
   end
 
+  bottle do
+    root_url "https://at.gridcoin.pl"
+    sha256 cellar: :any, arm64_sonoma: "427dd3c66fdda24d30b070f23c3d416ff9f091e374c3b7c98ded40f2a34faa4b"
+  end
 
   depends_on "boost"
   depends_on "leveldb"
