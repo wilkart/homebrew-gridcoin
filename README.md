@@ -10,7 +10,7 @@ Additionally, please ensure to exclude or ignore the following path from real-ti
 
     /usr/local/Cellar/gridcoin-cli (Apple Intel)
 
-Apple Lockdown Mode helps protect devices against extremely rare and highly sophisticated cyber attacks. It prevents Gridcoin Research CLI for macOS to work correctly ("staking": false, "mining-error": "Offline",). Disable Lockdown Mode, reboot your system, proceed with installation or upgrade and enable Lockdown Mode on again.
+Apple Lockdown Mode helps protect devices against extremely rare and highly sophisticated cyber attacks. It might prevent Gridcoin Research CLI for macOS to work correctly ("staking": false, "mining-error": "Offline",). Disable Lockdown Mode, reboot your system, proceed with installation or upgrade and enable Lockdown Mode again.
 
 
 ## Installation
