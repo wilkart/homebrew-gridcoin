@@ -27,10 +27,10 @@ class GridcoinCli < Formula
     EOS
   end
 
-  bottle do
-    root_url "https://at.gridcoin.pl"
-    sha256 cellar: :any, arm64_sonoma: "427dd3c66fdda24d30b070f23c3d416ff9f091e374c3b7c98ded40f2a34faa4b"
-  end
+#  bottle do
+#    root_url "https://at.gridcoin.pl"
+#    sha256 cellar: :any, arm64_sonoma: "427dd3c66fdda24d30b070f23c3d416ff9f091e374c3b7c98ded40f2a34faa4b"
+#  end
 
   depends_on "boost"
   depends_on "leveldb"

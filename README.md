@@ -62,6 +62,12 @@ Apple Lockdown Mode helps protect devices against extremely rare and highly soph
     gridcoinresearchd beaconstatus
 
 
+## Upgrade
+    brew services stop wilkart/gridcoin/gridcoin-cli
+    brew update && brew upgrade
+    brew services start wilkart/gridcoin/gridcoin-cli
+
+
 ## Unistallation
 
     brew uninstall gridcoin-cli
