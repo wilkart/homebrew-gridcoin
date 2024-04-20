@@ -38,6 +38,7 @@ Apple Lockdown Mode helps protect devices against extremely rare and highly soph
 
 ## Running
     brew services start wilkart/gridcoin/gridcoin-cli
+    tail -f ~/Library/Application\ Support/GridcoinResearch/debug.log
 
 
 ## Usage
@@ -64,7 +65,8 @@ Apple Lockdown Mode helps protect devices against extremely rare and highly soph
 
 ## Upgrade
     brew services stop wilkart/gridcoin/gridcoin-cli
-    brew update && brew upgrade
+    brew update 
+    brew upgrade
     brew services start wilkart/gridcoin/gridcoin-cli
 
 
