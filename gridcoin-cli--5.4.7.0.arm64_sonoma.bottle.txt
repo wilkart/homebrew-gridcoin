@@ -1,4 +1,0 @@
-./gridcoin-cli--5.4.7.0.arm64_sonoma.bottle.tar.gz
-  bottle do
-    sha256 cellar: :any, arm64_sonoma: "3850b814d4aecd4748b708a28cdea45713250a7d6decd0a38d3043e347279d00"
-  end

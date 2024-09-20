@@ -3,8 +3,8 @@ class GridcoinCli < Formula
   homepage "https://gridcoin.us/"
 
   stable do
-    url "https://github.com/gridcoin-community/Gridcoin-Research/archive/refs/tags/5.4.7.0.tar.gz"
-    sha256 "bd2341513cd533257358080600d6a8ab20128c14a19d3881117dfa65a6cd8f2d"
+    url "https://github.com/gridcoin-community/Gridcoin-Research/archive/refs/tags/5.4.8.0-hotfix-1.tar.gz"
+    sha256 "bf77d34bd07448b35b57969c5ef44189c28d12b1cd4cf7e4b56b868bbeb0a1e2"
     patch <<-EOS
       diff --git a/configure.ac b/configure.ac
       index eb96af9c..8b692612 100644
@@ -28,6 +28,10 @@ class GridcoinCli < Formula
     EOS
   end
 
+#  bottle do
+#    root_url "https://at.gridcoin.pl"
+#    sha256 cellar: :any, arm64_sonoma: "427dd3c66fdda24d30b070f23c3d416ff9f091e374c3b7c98ded40f2a34faa4b"
+#  end
 
   depends_on "boost"
   depends_on "leveldb"
@@ -53,11 +57,11 @@ class GridcoinCli < Formula
       MINIUPNPC_LIB_PATH=#{Formula["miniupnpc"].lib}
       --with-boost=#{boost}
       --without-gui
-      --enable-reduce-exports
       --disable-tests
       --disable-bench
       --disable-dependency-tracking
       --disable-asm
+      --enable-reduce-exports
     ]
 
     system "cd src ; ../contrib/nomacro.pl"
@@ -67,8 +71,24 @@ class GridcoinCli < Formula
     system "make"
     system "strip", "src/gridcoinresearchd"
     bin.install "src/gridcoinresearchd"
+    man1.install ["doc/gridcoinresearchd.1"]
   end
 
+  def caveats
+    <<~EOS
+      Gridcoin is a peer-to-peer cryptocurrency that uses distributed computing (BOINC).
+      See also: 
+      - man 1 gridcoinresearchd
+      - gridcoinresearchd --help
+      - gridcoinresearchd help
+    EOS
+  end
+
+  service do
+    run [opt_bin/"gridcoinresearchd", "--daemon=0", "--synctime=1", "--disableupdatecheck=1"]
+    keep_alive true
+    require_root false
+  end
 
   test do
     # `test do` will create, run in and delete a temporary directory.
