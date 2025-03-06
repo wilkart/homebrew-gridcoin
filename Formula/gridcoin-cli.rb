@@ -3,8 +3,8 @@ class GridcoinCli < Formula
   homepage "https://gridcoin.us/"
 
   stable do
-    url "https://github.com/gridcoin-community/Gridcoin-Research/archive/refs/tags/5.4.8.0-hotfix-1.tar.gz"
-    sha256 "bf77d34bd07448b35b57969c5ef44189c28d12b1cd4cf7e4b56b868bbeb0a1e2"
+    url "https://github.com/gridcoin-community/Gridcoin-Research/archive/refs/tags/5.4.9.0.tar.gz"
+    sha256 "be7176f8d3b11283b3f0a8e5db5339f76a892da448073dab921bf09ff51bc37f"
     patch <<-EOS
       diff --git a/configure.ac b/configure.ac
       index eb96af9c..8b692612 100644
