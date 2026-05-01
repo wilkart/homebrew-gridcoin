@@ -3,81 +3,60 @@ class GridcoinCli < Formula
   homepage "https://gridcoin.us/"
 
   stable do
-    url "https://github.com/gridcoin-community/Gridcoin-Research/archive/refs/tags/5.4.9.0.tar.gz"
-    sha256 "be7176f8d3b11283b3f0a8e5db5339f76a892da448073dab921bf09ff51bc37f"
+    url "https://github.com/gridcoin-community/Gridcoin-Research/archive/refs/tags/5.5.0.0.tar.gz"
+    sha256 "407e06412903737f9afdeda5bad2503471bcf24e7672a97a35b8069cbffa27e8"
     patch <<-EOS
-      diff --git a/configure.ac b/configure.ac
-      index eb96af9c..8b692612 100644
-      --- a/configure.ac
-      +++ b/configure.ac
-      @@ -829,5 +823,5 @@
-       if test x$use_boost = xyes; then
-       
-      -BOOST_LIBS="$BOOST_LDFLAGS $BOOST_SYSTEM_LIB $BOOST_FILESYSTEM_LIB $BOOST_IOSTREAMS_LIB $BOOST_THREAD_LIB $BOOST_ZLIB_LIB"
-      +BOOST_LIBS="$BOOST_LDFLAGS $BOOST_SYSTEM_LIB $BOOST_FILESYSTEM_LIB $BOOST_IOSTREAMS_LIB $BOOST_THREAD_LIB $BOOST_ZLIB_LIB -lboost_system-mt"
-       
-       
-      @@ -1171,5 +1165,7 @@ echo "  CFLAGS        = $CFLAGS"
-       echo "  CPPFLAGS      = $CPPFLAGS"
-       echo "  CXX           = $CXX"
-       echo "  CXXFLAGS      = $CXXFLAGS"
-      +echo "  OBJCXX        = $OBJCXX"
-      +echo "  OBJCXXFLAGS   = $OBJCXXFLAGS"
-       echo "  LDFLAGS       = $LDFLAGS"
-       echo
+      diff --git a/src/clientversion.cpp b/src/clientversion.cpp
+      index c0729302d..8735ebfe1 100644
+      --- a/src/clientversion.cpp
+      +++ b/src/clientversion.cpp
+      @@ -13,7 +13,7 @@
+        * for both gridcoinresearchd and gridcoinresearch-qt, to make it harder for attackers to
+        * target servers or GUI users specifically.
+        */
+      -const std::string CLIENT_NAME("Halford");
+      +const std::string CLIENT_NAME("Natasha");
     EOS
   end
 
-#  bottle do
-#    root_url "https://at.gridcoin.pl"
-#    sha256 cellar: :any, arm64_sonoma: "427dd3c66fdda24d30b070f23c3d416ff9f091e374c3b7c98ded40f2a34faa4b"
-#  end
+  bottle do
+    root_url "https://bootles.gridcoin.pl"
+    sha256 cellar: :any, arm64_tahoe: "fd0e09a7a8b797ea8c6c2a6251ed1817d0c8d5471afce0cdcde40a1f7839469b"
+  end
 
-  depends_on "boost@1.85"
-  depends_on "leveldb"
+  depends_on "boost"
   depends_on "openssl@3"
   depends_on "miniupnpc"
   depends_on "libzip"
+  depends_on "icu4c@78"
   depends_on "pkg-config" => :build
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "libtool" => :build
-
+  depends_on "cmake" => :build
 
   def install
-    boost = Formula["boost@1.85"].opt_prefix
-
-    configure_args = %W[
-      BOOST_ROOT=#{boost}
-      BOOST_INCLUDE_PATH=#{boost}/include
-      BOOST_LIB_PATH=#{boost}/lib
-      OPENSSL_INCLUDE_PATH=#{Formula["openssl@3"].include}
-      OPENSSL_LIB_PATH=#{Formula["openssl@3"].lib}
-      MINIUPNPC_INCLUDE_PATH=#{Formula["miniupnpc"].include}
-      MINIUPNPC_LIB_PATH=#{Formula["miniupnpc"].lib}
-      --with-boost=#{boost}
-      --without-gui
-      --disable-tests
-      --disable-bench
-      --disable-dependency-tracking
-      --disable-asm
-      --enable-reduce-exports
+    cmake_args = %w[
+      -DCMAKE_PREFIX_PATH=#{Formula["icu4c@78"].opt_prefix}
+      -DENABLE_GUI=off
+      -DENABLE_TESTS=off
+      -DCMAKE_BUILD_TYPE=Release
+      -DENABLE_PIE=on
+      -DENABLE_UPNP=on
+      -DDEFAULT_UPNP=on
+      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
     ]
 
-    system "cd src ; ../contrib/nomacro.pl"
-    system "./autogen.sh"
-    ENV.delete "OBJCXX"
-    system "./configure", *configure_args
-    system "make"
-    system "strip", "src/gridcoinresearchd"
-    bin.install "src/gridcoinresearchd"
+    system "grep", "CLIENT_NAME", "src/clientversion.cpp"
+    system "cmake", "-B", "build", *std_cmake_args, *cmake_args
+    system "cmake", "--build", "build", "--clean-first", "--parallel", ENV.make_jobs
+    system "strip", "build/bin/gridcoinresearchd"
+    bin.install "build/bin/gridcoinresearchd"
     man1.install ["doc/gridcoinresearchd.1"]
   end
 
   def caveats
     <<~EOS
-      Gridcoin is a peer-to-peer cryptocurrency that uses distributed computing (BOINC).
-      See also: 
+      Gridcoin is a peer-to-peer cryptocurrency that rewards users for contributing to BOINC distributed computing projects.
+      See also:
       - man 1 gridcoinresearchd
       - gridcoinresearchd --help
       - gridcoinresearchd help
@@ -91,15 +70,6 @@ class GridcoinCli < Formula
   end
 
   test do
-    # `test do` will create, run in and delete a temporary directory.
-    #
-    # This test will fail and we won't accept that! It's enough to just replace
-    # "false" with the main program this formula installs, but it'd be nice if you
-    # were more thorough. Run the test with `brew test Gridcoin`. Options passed
-    # to `brew install` such as `--HEAD` also need to be provided to `brew test`.
-    #
-    # The installed folder is not in the path, so use the entire path to any
-    # executables being tested: `system "#{bin}/program", "do", "something"`.
     system "false"
   end
 end
