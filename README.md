@@ -79,12 +79,12 @@ Apple Lockdown Mode helps protect devices against extremely rare and highly soph
 
 ## Feedback
 Feedback is appreciated:
-https://github.com/wilkart/homebrew-gridcoin/issues
-https://github.com/wilkart/homebrew-gridcoin/discussions
+    https://github.com/wilkart/homebrew-gridcoin/issues
+    https://github.com/wilkart/homebrew-gridcoin/discussions
 
 Gridcoin Research CLI for macOS is exclusively tested on Apple M1 Max. Send GRC to support it.
-GRC: RyaMjQmvWbpey3xxuQnrVNUqJWphLqQxqt
+    GRC: RyaMjQmvWbpey3xxuQnrVNUqJWphLqQxqt
 
 Brew bottles and blockchain snapshots are stored on decentralized cloud storage platform.
 Send ERC20 STORJ tokens via Ethereum (L1) network or zkSync Era (L2) network to support it.
-STORJ: 0x22Ec31C57e88cD1561701f1f5e49FbF5f9B0E861
+    STORJ: 0x22Ec31C57e88cD1561701f1f5e49FbF5f9B0E861
