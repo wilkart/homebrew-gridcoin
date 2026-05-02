@@ -68,7 +68,7 @@ Apple Lockdown Mode helps protect devices against extremely rare and highly soph
     brew services stop wilkart/gridcoin/gridcoin-cli;
     brew update;
     brew upgrade gridcoin-cli; # from compiled binary
-    brew upgrade gridcoin-cli; # from source code
+    brew upgrade --build-from-source gridcoin-cli; # from source code
     brew services start wilkart/gridcoin/gridcoin-cli;
 
 
