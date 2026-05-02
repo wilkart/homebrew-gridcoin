@@ -15,8 +15,9 @@ Apple Lockdown Mode helps protect devices against extremely rare and highly soph
 
 ## Installation
 
-    brew tap wilkart/gridcoin
-    brew install gridcoin-cli
+    brew tap wilkart/gridcoin;
+    brew install gridcoin-cli; # from compiled binary
+    brew install --build-from-source gridcoin-cli; # from source code
 
 
 ## Configuration
@@ -37,40 +38,41 @@ Apple Lockdown Mode helps protect devices against extremely rare and highly soph
 
 
 ## Running
-    brew services start wilkart/gridcoin/gridcoin-cli
-    tail -f ~/Library/Application\ Support/GridcoinResearch/debug.log
+    brew services start wilkart/gridcoin/gridcoin-cli;
+    tail -f ~/Library/Application\ Support/GridcoinResearch/debug.log;
 
 
 ## Usage
 #### Read manual and help pages.
-    man 1 gridcoinresearchd
-    gridcoinresearchd --help
-    gridcoinresearchd help
+    man 1 gridcoinresearchd;
+    gridcoinresearchd --help;
+    gridcoinresearchd help;
 
 #### List balances by receiving address.
-    gridcoinresearchd listreceivedbyaddress 1 true true
+    gridcoinresearchd listreceivedbyaddress 1 true true;
 
 #### Total available balance.
-    gridcoinresearchd getbalance
+    gridcoinresearchd getbalance;
 
 #### Display network related information.
-    gridcoinresearchd getnetworkinfo
+    gridcoinresearchd getnetworkinfo;
 
 #### Display mining-related information.
-    gridcoinresearchd getstakinginfo
+    gridcoinresearchd getstakinginfo;
 
 #### Display status of your beacon.
-    gridcoinresearchd beaconstatus
+    gridcoinresearchd beaconstatus;
 
 
 ## Upgrade
-    brew services stop wilkart/gridcoin/gridcoin-cli
-    brew update 
-    brew upgrade
-    brew services start wilkart/gridcoin/gridcoin-cli
+    brew services stop wilkart/gridcoin/gridcoin-cli;
+    brew update;
+    brew upgrade gridcoin-cli; # from compiled binary
+    brew upgrade gridcoin-cli; # from source code
+    brew services start wilkart/gridcoin/gridcoin-cli;
 
 
 ## Unistallation
 
-    brew uninstall gridcoin-cli
-    brew untap wilkart/gridcoin
+    brew uninstall gridcoin-cli;
+    brew untap wilkart/gridcoin;

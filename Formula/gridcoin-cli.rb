@@ -20,7 +20,7 @@ class GridcoinCli < Formula
   end
 
   bottle do
-    root_url "https://bootles.gridcoin.pl"
+    root_url "https://bottles.gridcoin.pl"
     sha256 cellar: :any, arm64_tahoe: "fd0e09a7a8b797ea8c6c2a6251ed1817d0c8d5471afce0cdcde40a1f7839469b"
   end
 
