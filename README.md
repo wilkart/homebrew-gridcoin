@@ -78,7 +78,7 @@ Apple Lockdown Mode helps protect devices against extremely rare and highly soph
     brew untap wilkart/gridcoin;
 
 ## Feedback
-Feedback is appreciated:
+Feedback is appreciated.
 
     https://github.com/wilkart/homebrew-gridcoin/issues
     https://github.com/wilkart/homebrew-gridcoin/discussions
