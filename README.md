@@ -2,7 +2,7 @@
 
 
 ## Disclaimer
-This software is identified as OSX/CoinMiner by antimalware and antivirus software. 
+This software is identified as OSX/CoinMiner or Unsigned.CryptoWallet by antimalware and antivirus software. 
 To proceed with installation or upgrade, you will need to temporarily disable these security tools. 
 Additionally, please ensure to exclude or ignore the following path from real-time protection in order to run the wallet.
 
